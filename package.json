@@ -1,0 +1,53 @@
+{
+  "name": "central-authentication",
+  "version": "1.0.0",
+  "description": "Demonstrates a centralized SSO approach",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp webserver & node ./server",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicorias/central-authentication-sample.git"
+  },
+  "keywords": [
+    "sso",
+    "cors",
+    "central",
+    "authentication"
+  ],
+  "author": "shawn cicoria",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cicorias/central-authentication-sample/issues"
+  },
+  "homepage": "https://github.com/cicorias/central-authentication-sample#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookies": "^0.5.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-env": "^0.2.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-webserver": "^0.9.1",
+    "history": "^1.13.1",
+    "jsonwebtoken": "^5.4.1",
+    "jwt-simple": "^0.4.0",
+    "lodash": "^3.10.0",
+    "moment": "^2.10.3",
+    "mongoose": "^4.3.1",
+    "morgan": "^1.6.1",
+    "oauth2-server": "^2.4.1",
+    "object-assign": "^2.0.0",
+    "pouchdb": "^5.1.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-router-ie8": "^0.13.4",
+    "react-templates": "^0.1.20",
+    "swagger-node-express": "^2.1.3"
+  }
+}

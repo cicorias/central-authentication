@@ -1,0 +1,53 @@
+<html>
+
+<head>
+	<title>Test Page</title>
+	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="/vendor/jquery/dist/jquery.js"></script>
+	<script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+	<script src="http://auth.127.0.0.1.xip.io:8000/helper.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<div>Open site A with URL: <a target="_blank" href='http://siteA.127.0.0.1.xip.io:8001/'>http://siteA.127.0.0.1.xip.io:8001</a></div>
+		<div>Open site B with URL: <a target="_blank" href='http://siteB.127.0.0.1.xip.io:8001/'>http://siteB.127.0.0.1.xip.io:8001</a></div>
+		<div>Open Auth Site with:<a target="_blank" href="http://auth.127.0.0.1.xip.io:8000/">http://auth.127.0.0.1.xip.io:8000/</a></div>
+		<div class="form-group">
+			<form>
+				<label for="txtusername">email</label>
+				<input type="email" id="txtusername" class="form-control" value="johndoe">
+				<label for="txtpassword">password</label>
+				<input type="password" id="txtpassword" class="form-control" value="password">
+				<input type="button" class="btn btn-primary" value="sso.login" onclick="sso.login($('#txtusername').val(), $('#txtpassword').val(), updatestatus);">
+				<!--<input type="button" class="btn btn-success" value="local login" onclick="mylogin($('#txtusername').val(), $('#txtpassword').val(), createCookie);">-->
+				<input type="button" class="btn btn-warning" value="is logged on" onclick="sso.logincheck(updatestatus);">
+			</form>
+		</div>
+		<div>
+			<div id="msg"></div>
+		</div>
+	</div>
+
+	<script>
+		'use strict';
+		
+		function updatestatus(content){
+			console.log('trying to update status with: ' + content);
+			$('#msg').html(content);
+		}
+		
+		(function(){
+			sso.logincheck(updatestatus);
+		})()
+		
+
+	</script>
+
+</body>
+
+</html>

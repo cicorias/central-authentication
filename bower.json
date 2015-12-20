@@ -1,0 +1,31 @@
+{
+  "name": "central-authentication",
+  "description": "Demonstrates a centralized SSO approach",
+  "main": "server.js",
+  "authors": [
+    "shawn cicoria"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "sso",
+    "cors",
+    "central",
+    "authentication"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "staticsite/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6"
+  }
+}
