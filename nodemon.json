@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": ["users/*", "LOG", "LOG.old", "LOCK"],
+  "watch": [
+    "test/fixtures/",
+    "test/samples/"
+  ]
+}

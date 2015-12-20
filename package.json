@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp webserver & node ./server",
+    "start": "node ./server",
     "postinstall": "bower install"
   },
   "repository": {
@@ -31,6 +31,8 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-env": "^0.2.0",
+    "gulp-exec": "^2.1.2",
+    "gulp-express": "^0.3.5",
     "gulp-nodemon": "^2.0.4",
     "gulp-notify": "^2.2.0",
     "gulp-webserver": "^0.9.1",
@@ -41,6 +43,7 @@
     "moment": "^2.10.3",
     "mongoose": "^4.3.1",
     "morgan": "^1.6.1",
+    "node-notifier": "^4.4.0",
     "oauth2-server": "^2.4.1",
     "object-assign": "^2.0.0",
     "pouchdb": "^5.1.0",

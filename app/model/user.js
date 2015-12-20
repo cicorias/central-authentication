@@ -31,8 +31,8 @@ User.findOne = function(username, callback){
     debug('looking for user: ' + username);
     db.get(username)
         .then(function (user) {
-        debug('got user: ' + username);
-        callback(null, user);
+            debug('got user: ' + username);
+            callback(null, user);
         })
         .catch(function (err) {
             debug(err);

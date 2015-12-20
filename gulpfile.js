@@ -1,48 +1,33 @@
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
-var nodemon = require('gulp-nodemon');
-var env = require('gulp-env');
-var debug = require('debug')('gulp:tasks');
+var nodemon = require('gulp-nodemon'); //conflics with pouchdb and file locks
+var exec = require('gulp-exec');
+var notify = require('gulp-notify');
+var notifier = require('node-notifier');
+// var env = require('gulp-env');
 
 var User = require('./app/model/user.js');
  
 gulp.task('webserver', function() {
-  gulp.src('staticsite')
+   gulp.src('staticsite')
     .pipe(webserver({
       path: '/',
       port: 8001,
       livereload: false,
-      host: 'siteA.127.0.0.1.xip.io',
+      host: 'www1.127.0.0.1.xip.io',
       open: true,
       fallback: 'index.html'
     }));
+    
 });
 
 
-gulp.task('nodemon', function () {
-  nodemon({
-    script: 'server.js'
-  , env: { 'NODE_ENV': 'development', 
-    'PORT':8000, 'DEBUG': 'server:*' }
-  })
-});
+gulp.task('default', ['webserver']);
 
-
-gulp.task('default', ['webserver', 'nodemon']);
-
-
-gulp.task('createuser', ['set-env'], function(){
-  // create a sample user
+gulp.task('createuser', function(){
   createUser();
+  notifier.notify({title: 'creating user', message: 'end...'});
 })
-
-gulp.task('set-env', function () {
-  env({
-    vars: {
-      DEBUG: "*:*"
-    }
-  });  
-});
 
 
 function createUser(){
@@ -65,7 +50,6 @@ function createUser(){
 
 
 function errorHandler (err) {
-  debug('error on : ', err);
   console.error('didn\'t create user.. ', err);
   this.emit('end');
 }

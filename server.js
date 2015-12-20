@@ -7,8 +7,6 @@ var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var path        = require('path');
 
-var PouchDB = require('pouchdb');
-
 var Cookies     = require('cookies');
 
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
@@ -20,9 +18,7 @@ var debug  = require('debug')('server:main');
 // =======================
 // configuration =========
 // =======================
-var port = process.env.PORT || 8080; // used to create, sign, and verify tokens
-
-var db = new PouchDB('users');
+var port = process.env.PORT || 8000; // used to create, sign, and verify tokens
 
 app.set('superSecret', config.secret); // secret variable
 

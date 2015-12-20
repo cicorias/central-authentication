@@ -37,8 +37,21 @@ for example in the following modify to the DNS name and if necessary when using 
 ### Create a `config.private.js` file
 Copy the `config.sample.js` file to `config.private.js` and modify your secret - which is used to sign jwt.
 
+
+### Create a test user
+run `gulp createuser` - this should create a PouchDB local and a single user.
+
 ### Run the site
-There is a default gulp script that will run the gulp-webserver on port 8001, and nodemon on port 8000.  The latter represents the API site.
+There is a default gulp script that will run the gulp-webserver on port 8001, 
+
+the other server must be run as `node ./server` - anything under nodemon is causing conflicts.The latter represents the API site.
+
+```
+# in 1 shell
+gulp webserver
+
+# in shell 2
+npm start
 
 
 ### Initialize a test user
@@ -53,7 +66,7 @@ On the app site, you need to update a page to include the JavaScript `helper.js`
 ### Reference the `helper.js' library
 For example:
 ```html
-	<script src="http://auth.127.0.0.1.xip.io:8000/helper.js"></script>
+	<script src="http://127.0.0.1.xip.io:8000/helper.js"></script>
 ```
 
 ### Create a Form 
