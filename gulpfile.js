@@ -14,15 +14,23 @@ gulp.task('webserver', function() {
       path: '/',
       port: 8001,
       livereload: false,
-      host: 'www1.127.0.0.1.xip.io',
+      host: 'auth.vcap.me',
       open: true,
       fallback: 'index.html'
     }));
     
 });
 
+gulp.task('nodemon', function () {
+   nodemon({
+     script: 'server.js'
+   , env: { 'NODE_ENV': 'development', 
+     'PORT':8000, 'DEBUG': 'server:*' }
+   })
+});
 
-gulp.task('default', ['webserver']);
+
+gulp.task('default', ['webserver', 'nodemon']);
 
 gulp.task('createuser', function(){
   createUser();

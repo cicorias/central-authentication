@@ -9,6 +9,6 @@ staticsite/vendor
 npm-debug.log
 
 
-users/**
+db/users.json
 
 

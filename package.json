@@ -37,20 +37,14 @@
     "gulp-notify": "^2.2.0",
     "gulp-webserver": "^0.9.1",
     "history": "^1.13.1",
+    "jsondown": "^0.1.1",
     "jsonwebtoken": "^5.4.1",
     "jwt-simple": "^0.4.0",
     "lodash": "^3.10.0",
-    "moment": "^2.10.3",
-    "mongoose": "^4.3.1",
     "morgan": "^1.6.1",
     "node-notifier": "^4.4.0",
     "oauth2-server": "^2.4.1",
     "object-assign": "^2.0.0",
-    "pouchdb": "^5.1.0",
-    "react": "^0.13.3",
-    "react-router": "^0.13.3",
-    "react-router-ie8": "^0.13.4",
-    "react-templates": "^0.1.20",
-    "swagger-node-express": "^2.1.3"
+    "pouchdb": "^5.1.0"
   }
 }

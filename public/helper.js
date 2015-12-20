@@ -16,7 +16,7 @@
 	//  - body, etc
 	// var ssocookiename = 'ssoauth';
 	
-	var apiendpoint = 'http://www3.127.0.0.1.xip.io:8000/api';
+	var apiendpoint = 'http://site1.vcap.me:8000/api';
 	var authendpoint = apiendpoint + '/authenticate';
     var verifyendpoint = apiendpoint + '/verify';
 

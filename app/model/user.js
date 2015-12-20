@@ -1,5 +1,5 @@
 var PouchDB = require('pouchdb');
-var db = new PouchDB('users');
+var db = new PouchDB('./db/users.json', { db: require('jsondown') });
 var debug = require('debug')('server:model');
 
 var _user = {};

@@ -42,6 +42,7 @@ Copy the `config.sample.js` file to `config.private.js` and modify your secret -
 run `gulp createuser` - this should create a PouchDB local and a single user.
 
 ### Run the site
+#### Running in indepdendant shells
 There is a default gulp script that will run the gulp-webserver on port 8001, 
 
 the other server must be run as `node ./server` - anything under nodemon is causing conflicts.The latter represents the API site.
@@ -52,7 +53,11 @@ gulp webserver
 
 # in shell 2
 npm start
+```
 
+
+#### Running with Gulp Task
+There is a problem with nodemon and the levelup drivers for PouchDB in that it will report a file lock.  So, i've setup the sample to use the [jsondown](https://github.com/toolness/jsondown) driver for PouchDB instead.
 
 ### Initialize a test user
 Once the server is running, a `GET` to the URL `http://server/setup` will create a user with the following credentials:
@@ -62,6 +67,16 @@ password: `password`
 
 ## Setup an App Site
 On the app site, you need to update a page to include the JavaScript `helper.js` file from the Auth Server.
+
+## Note the use of Wildcard 127.0.0.1 DNS
+The various sites make use of Wildcard localhost/127.0.0.1 DNS services so each site is a different DNS name.  You can either add to you localhost files or use the DNS as is.
+
+
+I've been using the [xip.io](http://xip.io) DNS services but they seem to drop out a bit on certain lookups after a while.
+
+So, i'm moving to the [vcap.me](http://vcap.me) approach for now instead. 
+
+
 
 ### Reference the `helper.js' library
 For example:
